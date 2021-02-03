@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title> </title>
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="57x57" href="{%static 'images/favicon/apple-icon-57x57.png'%}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{%static 'images/favicon/apple-icon-60x60.png'%}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{%static 'images/favicon/apple-icon-72x72.png'%}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{%static 'images/favicon/apple-icon-76x76.png'%}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{%static 'images/favicon/apple-icon-114x114.png'%}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{%static 'images/favicon/apple-icon-114x114.png'%}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{%static 'images/favicon/apple-icon-120x120.png'%}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{%static 'images/favicon/apple-icon-144x144.png'%}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{%static 'images/favicon/apple-icon-152x152.png'%}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{%static 'images/favicon/apple-icon-180x180.png'%}">
+	<link rel="icon" type="image/png" sizes="192x192"  href="{%static 'images/favicon/android-icon-192x192.png'%}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{%static 'images/favicon/favicon-32x32.png'%}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{%static 'images/favicon/favicon-96x96.png'%}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{%static 'images/favicon/favicon-16x16.png'%}">
+	<link rel="manifest" href="{%static 'images/favicon/manifest.json'%}">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{%static '/ms-icon-144x144.png'%}">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="{%static 'assets/css/plugin.css'%}">
+	<link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+</head>
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<div class="h_mainWrapper ">
+		<header id="h_headerWrapper" class="bg_black py-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-3 align-self-center">
+						<a href="index" class="logoSize">
+							<img src="{%static 'images/logo-01.svg'%}" alt="">
+						</a>
+					</div>
+					<div class="col-md-8 col-9">
+						<nav class="navbar navbar-expand-lg flex-md-column flex-row align-items-end">
+							<!-- <div class="btnSet">
+								<a href="tel:8291515523" class="h_btn h_btn_green">GIVE US A CALL</a>
+								<a href="javascript:;" class="h_btn h_btn_green">REGISTER NOW!!!</a>
+							</div> -->
+							<div class="collpase-nav mt-2 ml-auto">
+								<div class="burder-menu">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+								<ul class="navbar-nav">
+									<li class="nav-item"><a class="nav-link" href="index" title="HOME">HOME </a></li>
+									<li class="nav-item"><a class="nav-link" href="about" title="ABOUT US  ">ABOUT US  </a></li>
+									<li class="nav-item"><a class="nav-link" href="company#h_ContactFormSection" title="REQUIREMENT FORM">REQUIREMENT FORM  </a></li>
+									<li class="nav-item"><a class="nav-link" href="company#h_testimonial" title="TESTIMONIALS">TESTIMONIALS</a></li>
+									<li class="nav-item"><a class="nav-link" href="/app4/candidate" title="candidate">OPENING</a></li>
+									<li class="nav-item"><a class="nav-link" href="contact" title="CONTACTS">CONTACTS</a></li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--/.header -->
+		<div class="h_bodyWrapper ">
+			<div id="h_OpeningSection" class="bg-img  mini-banner">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-7 ml-auto align-self-center ">
+							<div class="h-heroContent h-headingSection h-SectionText text-md-right ">
+							<h1 class="text-white">Opening</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/.herobanner -->
+			<section id="h_gridSectionOne" class="open">
+				<div class="equalPadding">
+					<div class="row no-gutters h_openingGrid">
+						<!-- <div class="col-md-4  align-self-center ">
+							<div class="h-headingSection h-SectionText px-md-5">
+								
+							</div>
+						</div> -->
+						<div class="col-md-12 openingList align-self-center ">
+							<div class="row">
+										<div class="col-md-6 h-headingSection h-SectionText ">
+										<h6>01 Jobs found</h6>		
+										</div>
+										<div class="col-md-6 text-right h-headingSection h-SectionText px-md-5">
+											<h6>sort by</h6>		
+										</div>
+							</div>
+							<hr>
+							 {% for job in jobp%} 
+							<div class="row">
+						
+								<!-- <div class="col-md-2 h-headingSection h-SectionText ">
+									<img src="images/logo-banner.png" alt="logo" width="60">	
+								</div> -->
+								 	
+								<div class="col-md-8 h-headingSection h-SectionText ">
+								
+									<h6 class="opening-title" > {{job.job_title}} </h6>	
+									<ul class="list-inline opening-list">
+										<li class="list-inline-item"> <p><span class="fas fa-map-marker-alt"> {{job.locations}} </span></p>
+										</li>
+										<li class="list-inline-item">
+											<p><span class="fas fa-rupee-sign">{{job.annualsalary_lacs}}</span></p>
+										</li>
+									</ul>	
+								</div>
+								
+								<div class="col-md-4  text-right ">
+									<div class="btnSet">
+										<a href="details/{{ job.id }}" class="h_btn h_btn_green">VIEW JOBS</a>
+									</div>	
+								</div>
+								
+							</div>
+								 {% endfor %}
+						</div>
+					
+					</div>
+				</div>
+			</section>
+			<!--/.h_gridSectionOne -->
+			
+			<!--/.h_gridSectionTwo -->
+			
+		</div>
+		<!--/.bodyWrapper -->
+		<footer id="h_FooterWrapper" class="bg_black">
+			<div class="container">
+				<div class="equalPadding">
+					<div class="row">
+					<div class="col-md-2">
+					<div class="h-logoSize">
+						<a href="index" title=""> <img src="{%static 'images/logo-02.svg'%}" alt="footer"></a>
+					</div>
+					</div>
+					<div class="col-md-3 mr-auto">
+					<div class="footer_content ">
+						<p>Small businesses have always found it challenging
+						to attract good talent. A talented workforce can
+						determine the organization’s whole performance
+						in the long term.
+						</p>
+						<p>We work directly with businesses owners and help
+						them recruit strong talent. The success of Indian
+						economy majorly depends on the success of SMEs.</p>
+						<p>
+						HireRise is based at Navi Mumbai and catering to
+						MSMEs throughout the country. We have been in
+						practice for about a decade.</p>
+					</div>
+					</div>
+					<div class="col-md-3">
+						<div class="footer_content ">
+							<h4>QUICKLINKS</h4>
+							<ul class="footer_link">
+							<li><a href="index">HOME</a></li>
+							<li><a href="about">ABOUT US</a></li>
+							<li><a href="index#h_ContactFormSection">REQUIREMENT FORM</a></li>
+							<li><a href="index#h_testimonial">TESTIMONIALS</a></li>
+							<li><a href="contact">CONTACTS</a></li>
+						</ul>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="footer_content  ">
+							<h4>CONTACT</h4>
+							<ul class="contact_link">
+								<li>
+									<p>
+										<span class="fab fas fa-map-marker-alt text-white"></span> HireRise Talent Search Services <br/>
+										603, The corporate park, Plot 14 & 15,
+										Sector 18, Vashi, Navi Mumbai,
+										Maharashtra - 400703</p>
+								</li>
+								<li>
+									
+									<a href="tel:919152236787" title="919152236787"><p><span class="fas fa-phone-volume text-white"></span> 91 9152236787</p></a>
+								</li>
+								<li>
+									<p><span class="fas fa-envelope text-white"></span> <a href="mailto:hrdesk@hirerise.in">hrdesk@hirerise.in</a></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				</div>
+				<div class="devStrip py-2  footer_content">
+				<p class="float-md-left ">COPYRIGHT 2010-2020 HIRERISE Talent Search Services   </p>
+				<p class="text-md-right ">DESIGNED & DEVELOPED BY <a href="https://webyappy.com/" target="_blank" title="webyappy"><img src="images/webyappy-icon.png" alt=""></a> </p>
+				</div>
+			</div>
+			<div class="scroll-top">
+				<span class="fas fa-angle-double-up text-white"></span>
+			</div>
+		</footer>
+		<!-- footer -->
+	</div>
+	<!-- /.mainWrapper -->
+	
+	<!-- script -->
+	<script src="{%static 'js/plugin.js'%}"></script>
+	<script src="{%static 'js/main.js'%}"></script>
+	<!-- script -->
+</body>
+</html>

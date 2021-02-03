@@ -1,0 +1,929 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<!-- begin::Head -->
+	<head>
+
+		<!--begin::Base Path (base relative path for assets of this page) -->
+		<base href="../../">
+
+		<!--end::Base Path -->
+		<meta charset="utf-8" />
+		<title>Webyappy Console</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link href="{%static 'assets/media/logos/apple-icon-57x57.png'%}" rel="apple-touch-icon" sizes="57x57">
+		<link href="{%static 'assets/media/logos/apple-icon-60x60.png'%}" rel="apple-touch-icon" sizes="60x60">
+		<link href="{%static 'assets/media/logos/apple-icon-72x72.png'%}" rel="apple-touch-icon" sizes="72x72">
+		<link href="{%static 'assets/media/logos/apple-icon-76x76.png'%}" rel="apple-touch-icon" sizes="76x76">
+		<link href="{%static 'assets/media/logos/apple-icon-114x114.png'%}" rel="apple-touch-icon" sizes="114x114">
+		<link href="{%static 'assets/media/logos/apple-icon-120x120.png'%}" rel="apple-touch-icon" sizes="120x120">
+		<link href="{%static 'assets/media/logos/apple-icon-144x144.png'%}" rel="apple-touch-icon" sizes="144x144">
+		<link href="{%static 'assets/media/logos/apple-icon-152x152.png'%}" rel="apple-touch-icon" sizes="152x152">
+		<link href="{%static 'assets/media/logos/apple-icon-180x180.png'%}" rel="apple-touch-icon" sizes="180x180">
+		<link href="{%static 'assets/media/logos/android-icon-192x192.png'%}" rel="icon" type="image/png" sizes="192x192">
+		<link href="{%static 'assets/media/logos/favicon-32x32.png'%}" rel="icon" type="image/png" sizes="32x32">
+		<link href="{%static 'assets/media/logos/favicon-96x96.png'%}" rel="icon" type="image/png" sizes="96x96">
+		<link href="{%static 'assets/media/logos/favicon-16x16.png'%}" rel="icon" type="image/png" sizes="16x16">
+		<link rel="manifest" href="{%static 'assets/media/logos/manifest.json'%}">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="{%static 'assets/media/logos/ms-icon-144x144.png'%}">
+		<meta name="theme-color" content="#ffffff">
+
+		<!--begin::Fonts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+		<script>
+			WebFont.load({
+				google: {
+					"families": ["Poppins:300,400,500,600,700", "Asap+Condensed:500"]
+				},
+				active: function() {
+					sessionStorage.fonts = true;
+				}
+			});
+		</script>
+
+		<!--end::Fonts -->
+
+		<!--begin::Page Vendors Styles(used by this page) -->
+		<link href="{%static 'assets/vendors/custom/fullcalendar/fullcalendar.bundle.css'%}" rel="stylesheet" type="text/css" />
+
+		<!--end::Page Vendors Styles -->
+
+		<!--begin:: Global Mandatory Vendors -->
+		<link href="{%static 'assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css'%}" rel="stylesheet" type="text/css" />
+
+		<!--end:: Global Mandatory Vendors -->
+
+		<!--begin:: Global Optional Vendors -->
+		<link href="{%static 'assets/vendors/general/tether/dist/css/tether.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/bootstrap-datetime-picker/css/bootstrap-datetimepicker.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/bootstrap-daterangepicker/daterangepicker.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/select2/dist/css/select2.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/ion-rangeslider/css/ion.rangeSlider.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/nouislider/distribute/nouislider.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/owl.carousel/dist/assets/owl.carousel.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/owl.carousel/dist/assets/owl.theme.default.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/dropzone/dist/dropzone.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/summernote/dist/summernote.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/bootstrap-markdown/css/bootstrap-markdown.min.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/animate.css/animate.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/toastr/build/toastr.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/morris.js/morris.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/sweetalert2/dist/sweetalert2.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/socicon/css/socicon.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/custom/vendors/line-awesome/css/line-awesome.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/custom/vendors/flaticon/flaticon.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/custom/vendors/flaticon2/flaticon.css'%}" rel="stylesheet" type="text/css" />
+		<link href="{%static 'assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css'%}" rel="stylesheet" type="text/css" />
+		<!--end:: Global Optional Vendors -->
+
+		<!--begin::Global Theme Styles(used by all pages) -->
+		<link href="{%static 'assets/css/demo10/style.bundle.css'%}" rel="stylesheet" type="text/css" />
+		<!--end::Global Theme Styles -->
+
+		<!--begin::Layout Skins(used by all pages) -->
+
+		<!--end::Layout Skins -->
+		<!-- <link rel="shortcut icon" href="assets/media/logos/favicon.ico" /> -->
+		<link href="{%static 'assets/css/custom.css'%}" rel="stylesheet" type="text/css" />
+	</head>
+
+	<!-- end::Head -->
+
+	<!-- begin::Body -->
+	<body class="kt-page--fluid kt-page-content-white kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-page--loading">
+	 <form action="" method="POST" enctype="multipart/form-data"> 
+		<!-- begin:: Page -->
+
+		<!-- begin:: Header Mobile -->
+		<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+			<div class="kt-header-mobile__logo">
+				<a href="department.html">
+					<img alt="Webyappy Console" src="{%static './assets/media/logos/logo-sm.png'%}" />
+				</a>
+				<!-- <div class="dropdown">
+					<button type="button" class="btn btn-pill btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						<i class="flaticon2-layers"></i>
+					</button>
+					<div class="dropdown-menu dropdown-menu-fit dropdown-menu-md">
+						<ul class="kt-nav kt-nav--bold kt-nav--md-space kt-margin-t-20 kt-margin-b-20">
+							<li class="kt-nav__item">
+								<a class="kt-nav__link active" href="#">
+									<span class="kt-nav__link-icon"><i class="flaticon2-user"></i></span>
+									<span class="kt-nav__link-text">Human Resources</span>
+								</a>
+							</li>
+							<li class="kt-nav__item">
+								<a class="kt-nav__link" href="#">
+									<span class="kt-nav__link-icon"><i class="flaticon-feed"></i></span>
+									<span class="kt-nav__link-text">Customer Relationship</span>
+								</a>
+							</li>
+							<li class="kt-nav__item">
+								<a class="kt-nav__link" href="#">
+									<span class="kt-nav__link-icon"><i class="flaticon2-settings"></i></span>
+									<span class="kt-nav__link-text">Order Processing</span>
+								</a>
+							</li>
+							<li class="kt-nav__item">
+								<a class="kt-nav__link" href="#">
+									<span class="kt-nav__link-icon"><i class="flaticon2-chart2"></i></span>
+									<span class="kt-nav__link-text">Accounting</span>
+								</a>
+							</li>
+							<li class="kt-nav__separator"></li>
+							<li class="kt-nav__item">
+								<a class="kt-nav__link" href="#">
+									<span class="kt-nav__link-icon"><i class="flaticon-security"></i></span>
+									<span class="kt-nav__link-text">Finance</span>
+								</a>
+							</li>
+							<li class="kt-nav__item">
+								<a class="kt-nav__link" href="#">
+									<span class="kt-nav__link-icon"><i class="flaticon2-cup"></i></span>
+									<span class="kt-nav__link-text">Administration</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div> -->
+			</div>
+			<div class="kt-header-mobile__toolbar">
+				<button class="kt-header-mobile__toolbar-toggler" id="kt_header_mobile_toggler"><span></span></button>
+				<button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more-1"></i></button>
+			</div>
+		</div>
+		<!-- end:: Header Mobile -->
+		
+		<div class="kt-grid kt-grid--hor kt-grid--root">
+			<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+				<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper " id="kt_wrapper">
+
+					<!-- begin:: Header -->
+					<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " data-ktheader-minimize="on">
+						<div class="kt-header__top">
+							<div class="kt-container ">
+
+								<!-- begin:: Brand -->
+								<div class="kt-header__brand   kt-grid__item" id="kt_header_brand">
+									<div class="kt-header__brand-logo">
+										<a href="department.html">
+											<img alt="Webyappy Console" src="{%static 'assets/media/logos/hire-rise-logo.svg'%}" class="kt-header__brand-logo-default" />
+										</a>
+									</div>
+									
+									<div class="kt-header__brand-nav">
+										<button class="btn btn-bold btn-upper btn-clr"> Opening Management </button>
+									</div>
+								</div>
+								<!-- end:: Brand -->
+
+								<!-- begin:: Header Topbar -->
+								<div class="kt-header__topbar kt-grid__item kt-grid__item--fluid">
+
+									<div class="kt-header__topbar-item" data-toggle="kt-tooltip" title="Quick panel" data-placement="top">
+										<div class="kt-header__topbar-wrapper">
+											<span class="kt-header__topbar-icon kt-header__topbar-icon--info" id="kt_quick_panel_toggler_btn">
+												<i class="flaticon2-cube-1"></i>
+											</span>
+										</div>
+									</div>
+
+									<!--begin: Quick actions -->
+									<div class="kt-header__topbar-item dropdown">
+										<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
+											<img class="kt-header__topbar-icon kt-header__topbar-icon--warning" alt="hire-rise" src="{%static 'assets/media/logos/hire-rise.png'%}"/>
+										</div>
+										<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
+											<form>
+
+												<!--begin: Head -->
+												<div class="kt-head kt-head--skin-light">
+													<h3 class="kt-head__title">
+														User Quick Actions
+													</h3>
+												</div>
+												<!--end: Head -->
+
+												<!--begin: Grid Nav -->
+												<div class="kt-grid-nav kt-grid-nav--skin-light">
+													<div class="kt-grid-nav__row">
+														<a href="#" class="kt-grid-nav__item">
+															<span class="kt-grid-nav__icon">
+																<img class="kt-widget__img w-55" src="{%static 'assets/media/files/sales.png'%}" alt="Sales">
+															 </span>
+															<span class="kt-grid-nav__title">
+																Sales
+															</span>
+														</a>
+
+														<a href="#" class="kt-grid-nav__item">
+															<span class="kt-grid-nav__icon">
+																<img class="kt-widget__img w-55" src="{%static 'assets/media/files/accounting.png'%}" alt="Accounting">
+															 </span>
+															<span class="kt-grid-nav__title">
+																Accounting
+															</span>
+														</a>
+
+														<a href="#" class="kt-grid-nav__item">
+															<span class="kt-grid-nav__icon">
+																<img class="kt-widget__img w-55" src="{%static 'assets/media/files/operations.png'%}" alt="Operations">
+															 </span>
+															<span class="kt-grid-nav__title">
+																Operations
+															</span>
+														</a>
+													</div>
+												</div>
+
+												<div class="kt-grid-nav kt-grid-nav--skin-light">
+													<div class="kt-grid-nav__row">
+														<a href="#" class="kt-grid-nav__item">
+															<span class="kt-grid-nav__icon">
+																<img class="kt-widget__img w-55" src="{%static 'assets/media/files/hr.png'%}" alt="HR">
+															 </span>
+															<span class="kt-grid-nav__title">
+																HR
+															</span>
+														</a>
+
+														<a href="#" class="kt-grid-nav__item">
+															<span class="kt-grid-nav__icon">
+																<img class="kt-widget__img w-55" src="{%static 'assets/media/files/assets.png'%}" alt="Assets">
+															 </span>
+															<span class="kt-grid-nav__title">
+																Assets
+															</span>
+														</a>
+
+														<a href="#" class="kt-grid-nav__item">
+															<span class="kt-grid-nav__icon">
+																<img class="kt-widget__img w-55" src="{%static 'assets/media/files/intelligence.png'%}" alt="Intelligence">
+															 </span>
+															<span class="kt-grid-nav__title">
+																Intelligence
+															</span>
+														</a>
+													</div>
+												</div>
+												<!--end: Grid Nav -->
+											</form>
+										</div>
+									</div>
+									<!--end: Quick actions -->
+
+									
+									<!--begin: Quick panel toggler -->
+									<!-- <div class="kt-header__topbar-item" data-toggle="kt-tooltip" title="Quick panel" data-placement="top">
+										<div class="kt-header__topbar-wrapper">
+											<span class="kt-header__topbar-icon kt-header__topbar-icon--success" id="kt_quick_panel_toggler_btn"><i class="flaticon2-menu-2"></i></span>
+										</div>
+									</div> -->
+									<!--end: Quick panel toggler -->
+
+									<!--begin: Language bar -->
+									<!-- <div class="kt-header__topbar-item kt-header__topbar-item--langs">
+										<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
+											<span class="kt-header__topbar-icon kt-header__topbar-icon--info">
+												<img class="" src="assets/media/flags/012-uk.svg" alt="" />
+											</span>
+										</div>
+										<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim">
+											<ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
+												<li class="kt-nav__item kt-nav__item--active">
+													<a href="#" class="kt-nav__link">
+														<span class="kt-nav__link-icon"><img src="assets/media/flags/020-flag.svg" alt="" /></span>
+														<span class="kt-nav__link-text">English</span>
+													</a>
+												</li>
+												<li class="kt-nav__item">
+													<a href="#" class="kt-nav__link">
+														<span class="kt-nav__link-icon"><img src="assets/media/flags/016-spain.svg" alt="" /></span>
+														<span class="kt-nav__link-text">Spanish</span>
+													</a>
+												</li>
+												<li class="kt-nav__item">
+													<a href="#" class="kt-nav__link">
+														<span class="kt-nav__link-icon"><img src="assets/media/flags/017-germany.svg" alt="" /></span>
+														<span class="kt-nav__link-text">German</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div> -->
+									<!--end: Language bar -->
+
+									<!--begin: User bar -->
+									<div class="kt-header__topbar-item kt-header__topbar-item--user">
+										<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
+											<span class="kt-hidden kt-header__topbar-welcome">Hi,</span>
+											<span class="kt-hidden kt-header__topbar-username">Nick</span>
+											<img class="kt-hidden-" alt="Pic" src="{%static 'assets/media/users/300_21.jpg'%}" />
+											<span class="kt-header__topbar-icon kt-header__topbar-icon--brand kt-hidden"><b>S</b></span>
+										</div>
+										<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
+
+											<!--begin: Head -->
+											<div class="kt-user-card kt-user-card--skin-light kt-notification-item-padding-x">
+												<div class="kt-user-card__avatar">
+													<img class="kt-hidden-" alt="Pic" src="{%static 'assets/media/users/300_25.jpg'%}" />
+
+													<!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
+													<span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold kt-hidden">S</span>
+												</div>
+												<div class="kt-user-card__name">
+													Rajkapoor
+												</div>
+												<!-- <div class="kt-user-card__badge">
+													<span class="btn btn-label-primary btn-sm btn-bold btn-font-md">23 messages</span>
+												</div> -->
+											</div>
+
+											<!--end: Head -->
+
+											<!--begin: Navigation -->
+											<div class="kt-notification">
+												<a href="#" class="kt-notification__item">
+													<div class="kt-notification__item-icon">
+														<i class="flaticon2-calendar-3 kt-font-success"></i>
+													</div>
+													<div class="kt-notification__item-details">
+														<div class="kt-notification__item-title kt-font-bold">
+															My Profile
+														</div>
+														<div class="kt-notification__item-time">
+															Account settings and more
+														</div>
+													</div>
+												</a>
+												<a href="task-mapping.html" class="kt-notification__item">
+													<div class="kt-notification__item-icon">
+														<i class="flaticon2-user-1 kt-font-warning"></i>
+													</div>
+													<div class="kt-notification__item-details">
+														<div class="kt-notification__item-title kt-font-bold">
+															Task Mapping
+														</div>
+														<div class="kt-notification__item-time">
+															User access control
+														</div>
+													</div>
+												</a>
+												<!-- <a href="#" class="kt-notification__item">
+													<div class="kt-notification__item-icon">
+														<i class="flaticon2-rocket-1 kt-font-danger"></i>
+													</div>
+													<div class="kt-notification__item-details">
+														<div class="kt-notification__item-title kt-font-bold">
+															My Activities
+														</div>
+														<div class="kt-notification__item-time">
+															Logs and notifications
+														</div>
+													</div>
+												</a>
+												<a href="#" class="kt-notification__item">
+													<div class="kt-notification__item-icon">
+														<i class="flaticon2-hourglass kt-font-brand"></i>
+													</div>
+													<div class="kt-notification__item-details">
+														<div class="kt-notification__item-title kt-font-bold">
+															My Tasks
+														</div>
+														<div class="kt-notification__item-time">
+															latest tasks and projects
+														</div>
+													</div>
+												</a>
+												<a href="#" class="kt-notification__item">
+													<div class="kt-notification__item-icon">
+														<i class="flaticon2-cardiogram kt-font-warning"></i>
+													</div>
+													<div class="kt-notification__item-details">
+														<div class="kt-notification__item-title kt-font-bold">
+															Billing
+														</div>
+														<div class="kt-notification__item-time">
+															billing & statements <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill kt-badge--rounded">2 pending</span>
+														</div>
+													</div>
+												</a> -->
+												<div class="kt-notification__custom kt-space-between">
+													<a href="{%static 'demo10/custom/user/login-v2.html'%}" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
+												</div>
+											</div>
+
+											<!--end: Navigation -->
+										</div>
+									</div>
+
+									<!--end: User bar -->
+								</div>
+
+								<!-- end:: Header Topbar -->
+							</div>
+						</div>
+						
+					</div>
+					<!-- end:: Header -->
+					
+					<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+						<div class="kt-subheader kt-grid__item" id="kt_subheader">
+							<div class="kt-container  kt-container--fluid ">
+								
+								<div class="kt-subheader__main">
+									<h3 class="kt-subheader__title">
+										Department </h3>
+									<span class="kt-subheader__separator kt-hidden"></span>
+									<div class="kt-subheader__breadcrumbs">
+										<a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+										<a href="#" class="kt-subheader__breadcrumbs-link"> operations </a>
+
+										<a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+										<a href="#" class="kt-subheader__breadcrumbs-link"> Opening Management </a>										<span class="kt-subheader__breadcrumbs-separator"></span>
+										<!-- active page -->
+										<span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Published Positions</span>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					
+						<div class="kt-container kt-container--fluid kt-grid__item kt-grid__item--fluid">
+							<div class="row">
+								<div class="col-lg-12">
+
+									<!--begin::Portlet-->
+									<div class="kt-portlet kt-portlet--responsive-mobile search-portlet" id="kt_page_portlet">
+										<div class="kt-portlet__head">
+											<div class="kt-portlet__head-label">
+												<h3 class="kt-portlet__head-title white">Find Patron</h3>
+											</div>
+											<div class="kt-portlet__head-toolbar">
+												<a href="app4/operations1" class="btn btn-clean kt-margin-r-10">
+													<i class="la la-arrow-left"></i>
+													<span class="kt-hidden-mobile">Back</span>
+												</a>
+											</div>
+										</div>
+										<div class="kt-portlet__body">
+											<form class="kt-form" id="kt_form">
+											   	<div class="row">
+										        	
+										        	<div class="kt-input-icon kt-input-icon--left typeahead">
+														<input type="text" class="form-control form-control-lg" placeholder="Search..." id="we_search" dir="ltr">
+														<span class="kt-input-icon__icon kt-input-icon__icon--left">
+															<span><i class="fa fa-search"></i></span>
+														</span>
+													</div>
+
+											   	</div>
+											</form>
+										</div>
+									</div>
+									<!--end::Portlet-->
+								</div>
+							</div>
+                               {% for job in jobp1%} 
+							<div class="row">
+								<div class="col-lg-12">
+
+									<div class="kt-portlet main-portlet">
+										<div class="kt-portlet__body">
+											<div class="kt-widget kt-widget--user-profile-3">
+												<div class="kt-widget__top">
+													<div class="kt-widget__content">
+														<div class="kt-widget__head">
+															<div class="kt-widget__user">
+																<a href="#" class="kt-widget__username">
+																	{{job.First_name}}{{job.Last_name}}	
+																
+																</a>
+															</div>
+															<div class="kt-widget__action">
+															
+																<a href="{{job.Upload_cv.url}}" class="btn btn-label-brand btn-sm btn-icon" download="{{job.Upload_cv}}"  target="_blank"><i class="fa fa-download"></i></a>
+															</div>
+														</div>
+														
+														<div class="kt-widget__subhead">
+														
+															<a href="#" type="file"><i class="flaticon2-new-email"></i>{{job.Email_id}}</a>
+															<a href="#" type="file"><i class="fa fa-mobile-alt"></i>{{job.Mobile_no}}</a>
+															<a href="#" type="file"><i class="flaticon2-placeholder"></i>{{job.Curent_Loaction}} </a>
+                                                            <a href="#" type="file"><i class="flaticon2-placeholder"></i>{{job.jobop_id__skill_sets}} </a>
+														</div>
+														<div class="kt-widget__info kt-hidden">
+															<div class="kt-widget__desc">
+																I distinguish three main text objektive could be merely to inform people.
+																<br> A second could be persuade people.You want people to bay objective
+															</div>
+															<div class="kt-widget__progress">
+																<div class="kt-widget__text">
+																	Goals
+																</div>
+																<div class="progress" style="height: 5px;width: 100%;">
+																	<div class="progress-bar kt-bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+																</div>
+																<div class="kt-widget__stats">
+																	45%
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+                    {% endfor %}
+									
+															
+												
+							
+					<!-- begin:: Footer -->
+					<div class="kt-footer kt-grid__item" id="kt_footer">
+						<div class="kt-container ">
+							<div class="kt-footer__wrapper">
+								<div class="kt-footer__copyright">
+									2020&nbsp;&copy;&nbsp;<a href="javascript:;" target="_blank" class="kt-link">Webyappy Console</a>
+								</div>
+								<div class="kt-footer__menu">
+									<a href="javascript:;" target="_blank" class="kt-link">About</a>
+									<a href="javascript:;" target="_blank" class="kt-link">Team</a>
+									<a href="javascript:;" target="_blank" class="kt-link">Contact</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end:: Footer -->
+				</div>
+			</div>
+		</div>
+		<!-- end:: Page -->
+
+		<!-- begin::Quick Panel -->
+		<div id="kt_quick_panel" class="kt-quick-panel">
+			<a href="#" class="kt-quick-panel__close" id="kt_quick_panel_close_btn"><i class="flaticon2-delete"></i></a>
+			<div class="kt-quick-panel__nav">
+				<!-- <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand  kt-notification-item-padding-x" role="tablist">
+					<li class="nav-item active">
+						<a class="nav-link active" data-toggle="tab" href="#kt_quick_panel_tab_notifications" role="tab">Notifications</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#kt_quick_panel_tab_logs" role="tab">Audit Logs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#kt_quick_panel_tab_settings" role="tab">Settings</a>
+					</li>
+				</ul> -->
+			</div>
+			<div class="kt-quick-panel__content">
+				<div class="tab-content">
+					<div class="tab-pane fade show kt-scroll active" id="kt_quick_panel_tab_notifications" role="tabpanel">
+						<div class="kt-notification">
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon2-line-chart kt-font-success"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										Muster
+										<br>
+										List of Patrons
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon2-box-1 kt-font-brand"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										New customer is registered
+									</div>
+									<div class="kt-notification__item-time">
+										3 hrs ago
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon2-chart2 kt-font-danger"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										Application has been approved
+									</div>
+									<div class="kt-notification__item-time">
+										3 hrs ago
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon2-image-file kt-font-warning"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										New file has been uploaded
+									</div>
+									<div class="kt-notification__item-time">
+										5 hrs ago
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon2-drop kt-font-info"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										New user feedback received
+									</div>
+									<div class="kt-notification__item-time">
+										8 hrs ago
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon2-pie-chart-2 kt-font-success"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										System reboot has been successfully completed
+									</div>
+									<div class="kt-notification__item-time">
+										12 hrs ago
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon2-favourite kt-font-danger"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										New order has been placed
+									</div>
+									<div class="kt-notification__item-time">
+										15 hrs ago
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item kt-notification__item--read">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon2-safe kt-font-primary"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										Company meeting canceled
+									</div>
+									<div class="kt-notification__item-time">
+										19 hrs ago
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon2-psd kt-font-success"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										New report has been received
+									</div>
+									<div class="kt-notification__item-time">
+										23 hrs ago
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon-download-1 kt-font-danger"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										Finance report has been generated
+									</div>
+									<div class="kt-notification__item-time">
+										25 hrs ago
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon-security kt-font-warning"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										New customer comment recieved
+									</div>
+									<div class="kt-notification__item-time">
+										2 days ago
+									</div>
+								</div>
+							</a>
+							<a href="#" class="kt-notification__item">
+								<div class="kt-notification__item-icon">
+									<i class="flaticon2-pie-chart kt-font-warning"></i>
+								</div>
+								<div class="kt-notification__item-details">
+									<div class="kt-notification__item-title">
+										New customer is registered
+									</div>
+									<div class="kt-notification__item-time">
+										3 days ago
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end::Quick Panel -->
+
+		<!-- begin::Scrolltop -->
+		<div id="kt_scrolltop" class="kt-scrolltop">
+			<i class="fa fa-arrow-up"></i>
+		</div>
+		<!-- end::Scrolltop -->
+
+		<!-- begin::Global Config(global config for global JS sciprts) -->
+		<script>
+			var KTAppOptions = {
+				"colors": {
+					"state": {
+						"brand": "#5d78ff",
+						"light": "#ffffff",
+						"dark": "#282a3c",
+						"primary": "#5867dd",
+						"success": "#34bfa3",
+						"info": "#36a3f7",
+						"warning": "#ffb822",
+						"danger": "#fd3995"
+					},
+					"base": {
+						"label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+						"shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+					}
+				}
+			};
+		</script>
+
+		<!-- end::Global Config -->
+
+		<!--begin:: Global Mandatory Vendors -->
+		<script src="{%static 'assets/vendors/general/jquery/dist/jquery.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap/dist/js/bootstrap.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/js-cookie/src/js.cookie.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/moment/min/moment.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/sticky-js/dist/sticky.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/wnumb/wNumb.js'%}" type="text/javascript"></script>
+
+		<!--end:: Global Mandatory Vendors -->
+
+		<!--begin:: Global Optional Vendors -->
+		<script src="{%static 'assets/vendors/general/jquery-form/dist/jquery.form.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/block-ui/jquery.blockUI.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/custom/js/vendors/bootstrap-datepicker.init.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap-datetime-picker/js/bootstrap-datetimepicker.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/custom/js/vendors/bootstrap-timepicker.init.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap-daterangepicker/daterangepicker.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap-maxlength/src/bootstrap-maxlength.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/custom/vendors/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap-select/dist/js/bootstrap-select.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap-switch/dist/js/bootstrap-switch.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/custom/js/vendors/bootstrap-switch.init.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/select2/dist/js/select2.full.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/ion-rangeslider/js/ion.rangeSlider.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/typeahead.js/dist/typeahead.bundle.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/handlebars/dist/handlebars.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/inputmask/dist/jquery.inputmask.bundle.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/inputmask/dist/inputmask/inputmask.date.extensions.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/inputmask/dist/inputmask/inputmask.numeric.extensions.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/nouislider/distribute/nouislider.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/owl.carousel/dist/owl.carousel.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/autosize/dist/autosize.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/clipboard/dist/clipboard.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/dropzone/dist/dropzone.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/summernote/dist/summernote.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/markdown/lib/markdown.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap-markdown/js/bootstrap-markdown.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/custom/js/vendors/bootstrap-markdown.init.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/bootstrap-notify/bootstrap-notify.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/custom/js/vendors/bootstrap-notify.init.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/jquery-validation/dist/jquery.validate.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/jquery-validation/dist/additional-methods.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/custom/js/vendors/jquery-validation.init.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/toastr/build/toastr.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/raphael/raphael.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/morris.js/morris.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/chart.js/dist/Chart.bundle.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/custom/vendors/bootstrap-session-timeout/dist/bootstrap-session-timeout.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/custom/vendors/jquery-idletimer/idle-timer.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/waypoints/lib/jquery.waypoints.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/counterup/jquery.counterup.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/es6-promise-polyfill/promise.min.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/sweetalert2/dist/sweetalert2.min.jsv" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/custom/js/vendors/sweetalert2.init.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/jquery.repeater/src/lib.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/jquery.repeater/src/jquery.input.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/jquery.repeater/src/repeater.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/vendors/general/dompurify/dist/purify.js'%}" type="text/javascript"></script>
+
+		<!--end:: Global Optional Vendors -->
+		<script src="{%static 'assets/js/jquery-repeater/jquery.repeater.js'%}" type="text/javascript"></script>
+		<script src="{%static 'assets/js/jquery-repeater/form-repeater.min.js'%}" type="text/javascript"></script>
+		<!--begin::Global Theme Bundle(used by all pages) -->
+		<script src="{%static 'assets/js/demo10/scripts.bundle.js'%}" type="text/javascript"></script>
+
+		<!--end::Global Theme Bundle -->
+
+		<!--begin::Page Vendors(used by this page) -->
+		<!--end::Page Vendors -->
+
+		<!--begin::Page Scripts(used by this page) -->
+		<script src="{%static 'assets/js/demo10/pages/dashboard.js'%}" type="text/javascript"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+    			$('.kt_select2').select2({
+            		placeholder: "Select a state"
+        		});
+
+        		$('.kt_datetimepicker').datetimepicker({
+		            format: "yyyy/mm/dd",
+		            todayHighlight: true,
+		            autoclose: true,
+		            startView: 2,
+		            minView: 2,
+		            forceParse: 0,
+		            pickerPosition: 'bottom-left'
+		        });
+
+        		// Auto suggestion
+		        var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+		            'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+		            'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+		            'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+		            'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+		            'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+		            'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+		            'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+		            'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+		        ];
+
+			    // Private functions
+			        var substringMatcher = function(strs) {
+			            return function findMatches(q, cb) {
+			                var matches, substringRegex;
+
+			                // an array that will be populated with substring matches
+			                matches = [];
+
+			                // regex used to determine if a string contains the substring `q`
+			                substrRegex = new RegExp(q, 'i');
+
+			                // iterate through the pool of strings and for any string that
+			                // contains the substring `q`, add it to the `matches` array
+			                $.each(strs, function(i, str) {
+			                    if (substrRegex.test(str)) {
+			                        matches.push(str);
+			                    }
+			                });
+
+			                cb(matches);
+			            };
+			        };
+
+			        $('#we_search').typeahead({
+			            hint: true,
+			            highlight: true,
+			            minLength: 1
+			        }, {
+			            name: 'states',
+			            source: substringMatcher(states)
+			        });
+			});
+		</script>
+		<!--end::Page Scripts -->
+	</body>
+
+	<!-- end::Body -->
+</html>

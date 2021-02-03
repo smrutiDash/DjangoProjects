@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title> </title>
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="57x57" href="{%static 'images/favicon/apple-icon-57x57.png'%}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{%static 'images/favicon/apple-icon-60x60.png'%}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{%static 'images/favicon/apple-icon-72x72.png'%}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{%static 'images/favicon/apple-icon-76x76.png'%}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{%static 'images/favicon/apple-icon-114x114.png'%}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{%static 'images/favicon/apple-icon-120x120.png'%}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{%static 'images/favicon/apple-icon-144x144.png'%}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{%static 'images/favicon/apple-icon-152x152.png'%}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{%static 'images/favicon/apple-icon-180x180.png'%}">
+	<link rel="icon" type="image/png" sizes="192x192"  href="{%static 'images/favicon/android-icon-192x192.png'%}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{%static 'images/favicon/favicon-32x32.png'%}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{%static 'images/favicon/favicon-96x96.png'%}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{%static 'images/favicon/favicon-16x16.png'%}">
+	<link rel="manifest" href="{%static 'images/favicon/manifest.json'%}">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{%static '/ms-icon-144x144.png'%}">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="{%static 'assets/css/plugin.css'%}">
+	<link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+</head>
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<form  action="" method="POST" enctype="multipart/form-data">
+  {% csrf_token %} 
+	<div class="h_mainWrapper ">
+		<header id="h_headerWrapper" class="bg_black py-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-3 align-self-center ">
+						<a href="index" class="logoSize">
+							<img src="{%static 'images/logo-01.svg'%}" alt="">
+						</a>
+					</div>
+					<div class="col-md-8 col-9">
+						<nav class="navbar navbar-expand-lg flex-md-column flex-row align-items-end">
+							<!-- <div class="btnSet">
+								<a href="tel:8291515523" class="h_btn h_btn_green">GIVE US A CALL</a>
+								<a href="javascript:;" class="h_btn h_btn_green">REGISTER NOW!!!</a>
+							</div> -->
+							<div class="collpase-nav mt-2 ml-auto">
+								<div class="burder-menu">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+								<ul class="navbar-nav">
+									<li class="nav-item"><a class="nav-link" href="<?php echo $base_url; ?>index" title="HOME">HOME </a></li>
+									<li class="nav-item"><a class="nav-link" href="<?php echo $base_url; ?>about" title="ABOUT US  ">ABOUT US  </a></li>
+									<li class="nav-item"><a class="nav-link" href="<?php echo $base_url; ?>index#h_ContactFormSection" title="REQUIREMENT FORM">REQUIREMENT FORM  </a></li>
+									<li class="nav-item"><a class="nav-link" href="<?php echo $base_url; ?>index#h_testimonial" title="TESTIMONIALS">TESTIMONIALS</a></li>
+									<li class="nav-item"><a class="nav-link" href="/candidate" title="candidate">OPENING</a></li>
+									<li class="nav-item"><a class="nav-link" href="<?php echo $base_url; ?>contact" title="CONTACTS">CONTACTS</a></li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--/.header -->
+		<div class="h_bodyWrapper">
+			<!--/.h_gridSectionOne -->
+			<section id="h_formSection">
+				<div class="container">
+					<div class="equalPadding row ">
+						<div class="col-md-4 d-md-block d-none" >
+							<img src="{%static 'images/a.svg'%}" alt="apply-from">
+						</div>
+						<div class="col-md-8 ml-auto ">
+							<form class="application-form">
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="firstname"> First Name</label>
+										
+										<input type="text" name="firstname" class="form-control input-style" placeholder="Enter your First Name" required>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="lastname"> Last Name</label> 
+										<input type="text" name="lastname" class="form-control input-style" placeholder="Enter your Last Name" required> 
+									</div>
+									<div class="form-group col-md-6">
+										<label for="email"> Email id</label>
+										
+										<input type="mail" name="email" class="form-control input-style" placeholder="Enter your Email id" title="Please enter valid mailid" pattern="^[A-Za-z][a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="mobileno">Mobile no.</label>
+										<input type="text" name="mobileno" class="form-control input-style" placeholder="Enter your Mobile no"  required> 
+									</div>
+									<div class="form-group no-gutters col-md-6">
+										<label for="Gender">Gender</label>
+										<div class="row  mr-auto ">
+											<div class="form-group col-md-4">
+												<input type="radio" id="male" checked="" name="gender" value="male" > <label class="radio-style" for="male">Male</label>	
+											</div>
+											<div class="form-group col-md-4">
+												<input type="radio" id="female" name="gender" value="female" > <label class="radio-style" for="female">Female</label>
+											</div>
+											<div class="form-group col-md-4">
+													<input type="radio" id="other" name="gender" value="other" > <label class="radio-style" for="other">Other</label>	
+											</div>	
+										</div>
+									</div>	
+									<div class="form-group col-md-6">
+										<label for="dateofbirth"> Date of Birth</label>
+										<input type="date" name="dateofbirth" class="form-control input-style" required> 
+									</div>	
+
+									<div class="form-group col-md-6">
+										<label for="Currentlocation">Current Location</label>
+										<input type="text" name="Currentlocation" class="form-control input-style" placeholder="Current location" required> 
+									</div>	
+									<div class="form-group no-gutters col-md-6">
+										<label for="firstname"> Total years of experience</label>
+										<div class="row  mr-auto">
+											<div class="form-group col-md-6">
+												<input type="text" name="year" class="form-control input-style" placeholder="ENter Year" required> 
+											</div>
+											<div class="form-group col-md-6">
+												<input type="text" name="month" class="form-control input-style" placeholder="ENter Month" required> 
+											</div>	
+										</div>
+									</div>
+									<div class="form-group col-md-12">
+										<label for="uploadcv">Upload CV</label>
+										<input type="file" name="uploadcv" class="form-control input-style" accept=".pdf" required> 
+									</div>	
+									<div class="kt-login__actions">
+									         <button  class="btn btn-primary btn-elevate kt-login__btn-primary" type="submit"  >Save</button>
+									</div>						
+								</div>
+							</form>
+						</div>
+				</div>
+				</div>
+			</section>
+			<!--/.h_gridSectionTwo -->
+		</div>
+		<!--/.bodyWrapper -->
+		<footer id="h_FooterWrapper" class="bg_black">
+			<div class="container">
+				<div class="equalPadding">
+					<div class="row">
+					<div class="col-md-2">
+					<div class="h-logoSize ">
+						<a href="index" title=""> <img src="{%static 'images/logo-02.svg'%}" alt="footer'%}"></a>
+					</div>
+					</div>
+					<div class="col-md-3 mr-auto">
+					<div class="footer_content ">
+						<p>Small businesses have always found it challenging
+						to attract good talent. A talented workforce can
+						determine the organization’s whole performance
+						in the long term.
+						</p>
+						<p>We work directly with businesses owners and help
+						them recruit strong talent. The success of Indian
+						economy majorly depends on the success of SMEs.</p>
+						<p>
+						HireRise is based at Navi Mumbai and catering to
+						MSMEs throughout the country. We have been in
+						practice for about a decade.</p>
+					</div>
+					</div>
+					<div class="col-md-3">
+						<div class="footer_content ">
+							<h4>QUICKLINKS</h4>
+							<ul class="footer_link">
+							<li><a href="index">HOME</a></li>
+							<li><a href="about">ABOUT US</a></li>
+							<li><a href="company#h_ContactFormSection">REQUIREMENT FORM</a></li>
+							<li><a href="company#h_testimonial">TESTIMONIALS</a></li>
+							<li><a href="contact">CONTACTS</a></li>
+						</ul>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="footer_content  ">
+							<h4>CONTACT</h4>
+							<ul class="contact_link">
+								<li>
+									<p>
+										<span class="fab fas fa-map-marker-alt text-white"></span> HireRise Talent Search Services <br/>
+										603, The corporate park, Plot 14 & 15,
+										Sector 18, Vashi, Navi Mumbai,
+										Maharashtra - 400703</p>
+								</li>
+								<li>
+									
+									<a href="tel:919152236787" title="919152236787"><p><span class="fas fa-phone-volume text-white"></span> 91 9152236787</p></a>
+								</li>
+								<li>
+									<p><span class="fas fa-envelope text-white"></span> <a href="mailto:hrdesk@hirerise.in">hrdesk@hirerise.in</a></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				</div>
+				<div class="devStrip py-2  footer_content">
+				<p class="float-md-left ">COPYRIGHT 2010-2020 HIRERISE Talent Search Services   </p>
+				<p class="text-md-right ">DESIGNED & DEVELOPED BY <a href="{%static 'https://webyappy.com/'%}" target="_blank" title="webyappy"><img src="{%static 'images/webyappy-icon.png'%}" alt=""></a> </p>
+				</div>
+			</div>
+			<div class="scroll-top">
+				<span class="fas fa-angle-double-up text-white"></span>
+			</div>
+		</footer>
+		<!-- footer -->
+	</div>
+	<!-- /.mainWrapper -->
+
+	<!-- script -->
+	<script src="{%static 'js/plugin.js'%}"></script>
+	<script src="{%static 'js/main.js'%}"></script>
+</form>
+</body>
+</html>

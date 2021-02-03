@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,td{
+        border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+
+{% block content %}
+ <h2>Job description</h2>
+
+
+ <table>
+
+     <tr>
+                 <th>JobType</th>
+                <th>Qualifications</th>
+                <th>SkillSets</th>
+                <th>Certifications</th>
+                <th>AnnualSalary</th>
+                <th>OtherRemark</th>
+                <th>Locations</th>
+                <th>CollegePreference</th>
+                <th>JoiningPeriod</th>
+                <th>Experience</th>
+                <th>NoOfVacancy</th>
+                <th>JobDescription</th>
+                <th>JobResponsibilty</th>
+    </tr>
+  {% for job in  jobp1%} 
+         <tr>
+                             <td>{{job.job_type}}</td>
+                             <td>{{job.qualification}}</td>
+                             <td>{{job.skill_sets}}</td>
+                             <td>{{job.certifications}}</td>
+                             <td>{{job.annualsalary_lacs}}</td>
+                             <td>{{job.other_remark}}</td>
+                             <td>{{job.locations}}</td>
+                             <td>{{job.college_preference}}</td>
+                             <td>{{job.joining_priod}}</td>
+                             <td>{{job.experience_year}}</td>
+                             <td>{{job.NoOf_Vacancy}}</td>
+                             <td>{{job.job_description}}</td>
+                             <td>{{job.job_responsibilty}}</td>
+                            
+                            
+             {% endfor %}
+            </tr>
+</table>
+
+
+{% endblock%}
+</body>
+</html>

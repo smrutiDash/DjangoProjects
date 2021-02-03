@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,td{
+        border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+{% block content %}
+ <h2>Show Data</h2>
+<table>
+    <tr>
+                  <th>JobTitle</th>
+                  <th> annualsalary_lacs</th>
+                 <th> locations</th>
+                 <th> viewOpenings</th>
+    </tr>
+  {% for job in jobp%} 
+         <tr>
+                <td>{{job.job_title}}</td>
+                <td>{{job.annualsalary_lacs}}</td>
+                <td>{{job.locations}}</td>
+                <td><a class="btn-link" href="firstdetailpage/{{ job.id }}" >view</a></td>
+                {% endfor %}
+            </tr>
+</table>
+{% endblock%}
+</body>
+</html>
